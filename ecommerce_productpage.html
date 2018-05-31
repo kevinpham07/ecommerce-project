@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Product Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			var cartCount = 0
+			$(".add").click(function (){
+				cartCount ++;
+  				$('.cartCount').html(cartCount);
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="ecommerce_productpage.css">
+</head>
+<body>
+	<div class="container bg-dark">
+		<a href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_homepage.html?#"><img class="banner" src="banner.jpg" alt="banner"></a>
+		<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse text-center" id="navbarNav">
+				<ul class="navbar-nav">
+	  				<li class="nav-item active"><a class="nav-link" href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_homepage.html?#">Home<span class="sr-only">(current)</span></a></li>
+	  				<li class="nav-item"><a class="nav-link" href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_homepage.html?#">Anime</a></li>
+	  				<li class="nav-item"><a class="nav-link" href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_homepage.html?#">Clothing</a></li>
+	  				<li class="nav-item"><a class="nav-link" href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_homepage.html?#">Accessories</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="minibar text-right">
+			<a href="" data-toggle="modal" data-target="#login">login</a>
+			<a class="cart text-right" href="file:///C:/Users/Thanh1/Documents/dojo%20stuff/projects/ecommerce/ecommerce_checkoutpage.html">cart<span class="badge badge-light cartCount"></span></a>
+		</div>
+		<div class="product">
+			<img class="img-fluid" src="overlord.png" alt="pic">
+			<div class="info">
+				<form class="text-success">
+					<h1>productname</h1>
+					<h1>price</h1>
+					<p>description</p>
+					<h6>size</h6>
+					<div class="btn-group btn-group-toggle text-uppercase" data-toggle="buttons">
+	  					<label class="btn btn-secondary"><input type="radio" name="options" id="xs" checked>xs</label>
+	  					<label class="btn btn-secondary"><input type="radio" name="options" id="s">s</label>
+	  					<label class="btn btn-secondary active"><input type="radio" name="options" id="m" >m</label>
+	  					<label class="btn btn-secondary"><input type="radio" name="options" id="l">l</label>
+	  					<label class="btn btn-secondary"><input type="radio" name="options" id="xl">xl</label>
+	  					<label class="btn btn-secondary"><input type="radio" name="options" id="xxl">xxl</label>
+					</div>
+					<!-- <p>Quantity</p> -->
+	  				<!-- <input class="itemCount" type="number" name="quantity" min="1" max="10"> -->
+	  				<button type="button" class="btn btn-light" data-toggle="modal" data-target="#confirmation">Add to Cart</button>
+	  				<div class="modal" id="confirmation" tabindex="-1" role="dialog">
+	  					<div class="modal-dialog" role="document">
+	    					<div class="modal-content">
+	      						<div class="modal-header bg-dark">
+	        						<h5 class="modal-title">confirmation</h5>
+	        						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="text-secondary" aria-hidden="true">&times;</span></button>
+	      						</div>
+	      						<div class="modal-body bg-secondary">
+	        						<p>confirm purchase?</p>
+	      						</div>
+	      						<div class="modal-footer bg-dark">
+	        						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        						<button type="button" class="add btn btn-success">Add to Cart</button>
+	      						</div>
+	    					</div>
+	  					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="login" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-dark">
+					<h5 class="modal-title text-success">login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="text-secondary" aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body bg-secondary">
+					<form>
+						<div class="form-group">
+							<label>email address</label>
+							<input type="email" class="form-control" id="inputEmail" placeholder="email@email.com">
+						</div>
+							<div class="form-group">
+							<label>Password</label>
+							<input type="password" class="form-control" id="inputPassword" placeholder="abc123">
+							</div>
+							<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input">
+							<label class="form-check-label">remember password</label>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer bg-dark">
+					<button type="submit" class="btn btn-success">login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
